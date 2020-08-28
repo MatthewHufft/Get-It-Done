@@ -30,5 +30,22 @@ export default class TaskController {
     TaskService.removeTask(id);
     _drawTasks();
   }
+
+  createItem(id){
+    event.preventDefault();
+    let form = event.target;
+    // @ts-ignore
+    let rawItem = form.listItemInput.value;
+    TaskService.createItem(rawItem, id);
+    _drawTasks();
+    }
+
+    removeItem(id, name) {
+      console.log(id, name)
+      TaskService.removeItem(id, name);
+      _drawTasks();
+    }
+
+  }
   //TODO: Your app will need the ability to create, and delete both lists and listItems
-}
+

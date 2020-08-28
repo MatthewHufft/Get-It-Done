@@ -11,22 +11,34 @@ export default class Task {
 
   get Template() {
     return `
-    <div class="card" style="width: 18rem;">
-    <i class="fa fa-times-circle-o d-flex align-self-end m-2" aria-hidden="true" onclick="app.taskController.removeTask('${this.id}')" role="button"></i>
-    <div class="card-body">
-      <h5 class="card-title">${this.title}</h5>
-      <p class="card-text">This will eventually be an optional, toggleable, description section</p>
+    <div class="col-2">
+      <div class="card" style="width: 18rem;">
+        <i class="fa fa-times-circle-o d-flex align-self-end m-2" aria-hidden="true" onclick="app.taskController.removeTask('${this.id}')" role="button"></i>
+        <div class="card-body">
+          <h5 class="card-title">${this.title}</h5>
+          <p class="card-text">This will eventually be an optional, toggleable, description section</p>
+        </div>
+        <form onsubmit="app.taskController.createItem('${this.id}')">
+          <input type="text" class="form-control" placeholder="Add list item + Enter" name="listItemInput" >
+        </form>
+        <ul class="list-group">
+          ${this.ListItemsTemplate}
+        </ul>
+      </div>
     </div>
-    ${this.ListItemsTemplate}
-  </div>
     `
 
   }
 
   get ListItemsTemplate() {
-    let template = '<ul class="list-group list-group-flush">'
-    this.listItems.forEach(item => { template += `<li class="list-group-item">${item}</li>`});
-    return template + '</ul>'
+    let template = ''
+    this.listItems.forEach(item => { template += `
+      <li class="list-group-item d-flex justify-content-between"> 
+        ${item} 
+        <span> <i class="fa fa-times-circle-o" aria-hidden="true" onclick="app.taskController.removeItem('${this.id}', '${item}')" role="button"></i> </span>
+      </li> 
+      `});
+    return template + ''
   }
 
 }

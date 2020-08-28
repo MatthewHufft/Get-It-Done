@@ -3,6 +3,15 @@ import store from "../store.js";
 
 //Public
 class TaskService {
+  removeItem(id, name) {
+    let task = store.State.tasks.find(t => t.id == id)
+    let itemIndex = task.listItems.findIndex(i => i == name)
+    task.listItems.splice(itemIndex, 1)
+  }
+  createItem(rawItem, id) {
+   let task = store.State.tasks.find(t => t.id == id)
+   task.listItems.push(rawItem) 
+  }
   removeTask(id) {
     store.State.tasks = store.State.tasks.filter(t => t.id != id)
   }
