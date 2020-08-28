@@ -13,7 +13,7 @@ function _drawTasks() {
 export default class TaskController {
   constructor() {
     //NOTE: After the store loads, we can automatically call to draw the Tasks.
-    _drawTasks();
+    _drawTasks(); 
   }
   
   createTask(event) {

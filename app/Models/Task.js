@@ -2,9 +2,10 @@ import { generateId } from "../utils.js";
 
 //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
 export default class Task {
-  constructor({title, color, id = ""}) {
+  constructor({title, color, listItems = [], id = ""}) {
     this.title = title
     this.color = color
+    this.listItems = listItems
     this.id = id || generateId();
   }
 
@@ -16,9 +17,16 @@ export default class Task {
       <h5 class="card-title">${this.title}</h5>
       <p class="card-text">This will eventually be an optional, toggleable, description section</p>
     </div>
+    ${this.ListItemsTemplate}
   </div>
     `
 
+  }
+
+  get ListItemsTemplate() {
+    let template = '<ul class="list-group list-group-flush">'
+    this.listItems.forEach(item => { template += `<li class="list-group-item">${item}</li>`});
+    return template + '</ul>'
   }
 
 }
