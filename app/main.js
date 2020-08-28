@@ -1,8 +1,8 @@
-import ListController from "./Controllers/ListController.js";
+import TaskController from "./Controllers/TaskController.js";
 
 //NOTE This should be good to go
 class App {
-  listController = new ListController();
+  taskController = new TaskController();
 }
 
 window["app"] = new App();
