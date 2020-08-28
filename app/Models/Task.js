@@ -11,6 +11,7 @@ export default class Task {
   get Template() {
     return `
     <div class="card" style="width: 18rem;">
+    <i class="fa fa-times-circle-o d-flex align-self-end m-2" aria-hidden="true" onclick="app.taskController.removeTask('${this.id}')" role="button"></i>
     <div class="card-body">
       <h5 class="card-title">${this.title}</h5>
       <p class="card-text">This will eventually be an optional, toggleable, description section</p>

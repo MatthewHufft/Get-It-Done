@@ -3,6 +3,9 @@ import store from "../store.js";
 
 //Public
 class TaskService {
+  removeTask(id) {
+    store.State.tasks = store.State.tasks.filter(t => t.id != id)
+  }
   createTask(rawTask) {
     let newTask = new Task(rawTask);
     store.State.tasks.push(newTask);
