@@ -11,15 +11,12 @@ export default class Task {
 
   get Template() {
     return `
-    <div class="col-3 mb-3">
-      <div class="card" style="width: 18rem;">
-      <h5 class="card-header d-flex justify-content-between ${this.colorCode}">${this.title}
+    <div class="col mb-3 mx-1">
+      <div class="card" style="width: 20rem;">
+      <h5 class="card-header text-light d-flex justify-content-between ${this.colorCode}">${this.title}
       <i class="fa fa-times-circle-o" aria-hidden="true" onclick="app.taskController.removeTask('${this.id}')" role="button"></i>
       </h5>
         
-        <div class="card-body">
-          <p class="card-text">This will eventually be an optional, toggleable, description section</p>
-        </div>
         <form onsubmit="app.taskController.createItem('${this.id}')">
           <input type="text" class="form-control" placeholder="Add list item + Enter" name="listItemInput" >
         </form>
@@ -35,7 +32,7 @@ export default class Task {
   get ListItemsTemplate() {
     let template = ''
     this.listItems.forEach(item => { template += `
-      <li class="list-group-item d-flex justify-content-between"> 
+      <li class="list-group-item d-flex justify-content-between darker-bg no-select"> 
         ${item} 
         <span> <i class="fa fa-times-circle-o" aria-hidden="true" onclick="app.taskController.removeItem('${this.id}', '${item}')" role="button"></i> </span>
       </li> 

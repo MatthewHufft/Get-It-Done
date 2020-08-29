@@ -1,11 +1,12 @@
 import TaskService from "../Services/TaskService.js";
 import store from "../store.js";
 
-//TODO Don't forget to render to the screen after every data change.
+
 function _drawTasks() {
   let template = ''
   store.State.tasks.forEach(Task => template += Task.Template)
   document.getElementById('taskSection').innerHTML = template
+  TaskService.saveState();
 }
 
 
@@ -46,6 +47,8 @@ export default class TaskController {
       TaskService.removeItem(id, name);
       _drawTasks();
     }
+
+    
 
   }
   //TODO: Your app will need the ability to create, and delete both lists and listItems

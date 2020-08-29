@@ -3,7 +3,10 @@ import Task from "./Models/Task.js";
 let _state = {
   /** @type {Task[]} */
   tasks: [
-    new Task({ title: "Grocery List", colorCode: "bg-primary", listItems: ["Buy a new puppy"]})
+    new Task({ title: "Grocery List", colorCode: "bg-primary", listItems: ["Milk", "Eggs", "Cheese"]}),
+    new Task({ title: "Chores", colorCode: "bg-danger", listItems: ["Dishes", "Sweep", "Bathe Dog" ]}),
+    new Task({ title: "Goals", colorCode: "bg-info", listItems: ["Become a software developer", "Backpack through every country", "Retire in 40's"]}),
+    new Task({ title: "Cars I want", colorCode: "bg-warning", listItems: ["Nissan GTR", "Pagani Huayra", "Mercedes Benz AMG S63"]})
   ]
 };
 
