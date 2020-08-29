@@ -16,14 +16,19 @@
           
           <form onsubmit="app.taskController.createTask(event)">
             <div class="form-row">
-              <div class="col-8">
-                <input type="text" class="form-control" placeholder="Title of your new task" name="titleOfTask">
-                
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Title of Task" name="titleOfTask">
               </div>
-              <!-- TODO add dropdown color selector for form. Should allow user to color code their tasks -->
-              <!-- <div class="col-1">
-                <input type="text" class="form-control" placeholder="Color" name="colorOfTask">
-              </div> -->
+              <div class="col">
+                <select class="custom-select" id="inlineFormCustomSelectPref" name="colorCode">
+                  <option selected>Select color</option>
+                  <option value="bg-danger">Red</option>
+                  <option value="bg-success">Green</option>
+                  <option value="bg-primary">Blue</option>
+                  <option value="bg-warning">Yellow</option>
+                  <option value="bg-secondary">Grey</option>
+                </select>
+              </div>
               <div class="col">
                 <button class="btn btn-success" type="submit">Create Task</button>
               </div>
@@ -32,7 +37,7 @@
           
         </div>
         <div class="col-4 text-center">
-          <h1>Get It Done</h1>
+          <h1>Listify!</h1>
         </div>
       </div>
     </header>

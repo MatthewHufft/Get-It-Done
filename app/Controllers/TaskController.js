@@ -21,6 +21,7 @@ export default class TaskController {
     let form = event.target
     let rawTask = {
       title: form.titleOfTask.value,
+      colorCode: form.colorCode.value
     }
     TaskService.createTask(rawTask);
     _drawTasks();
