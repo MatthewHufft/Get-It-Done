@@ -3,7 +3,7 @@ import Task from "./Models/Task.js";
 let _state = {
   /** @type {Task[]} */
   tasks: [
-    new Task({ title: "Grocery List", color: "red", listItems: ["Buy a new puppy"]})
+    new Task({ title: "Grocery List", colorCode: "red", listItems: ["Buy a new puppy"]})
   ]
 };
 

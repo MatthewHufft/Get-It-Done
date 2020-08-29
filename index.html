@@ -10,16 +10,13 @@
   </head>
 
   <body>
-    <header class="container-fluid text-center bg-primary">
-      <h1>Get It Done!</h1>
-    </header>
-    <main class="container-fluid">
-      <div class="row" id="taskForm">
-        <div class="col-12">
+    <header class="container-fluid bg-primary">
+      <div class="row">
+        <div class="col-4 mt-2">
           
           <form onsubmit="app.taskController.createTask(event)">
             <div class="form-row">
-              <div class="col-3">
+              <div class="col-8">
                 <input type="text" class="form-control" placeholder="Title of your new task" name="titleOfTask">
                 
               </div>
@@ -34,8 +31,13 @@
           </form>
           
         </div>
+        <div class="col-4 text-center">
+          <h1>Get It Done</h1>
+        </div>
       </div>
-      <div class="row d-flex" id="taskSection">
+    </header>
+    <main class="container-fluid">
+      <div class="row mt-2 d-flex" id="taskSection">
         
         <!-- <div class="card" style="width: 18rem;">
           <div class="card-body">

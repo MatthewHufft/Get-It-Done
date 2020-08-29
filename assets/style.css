@@ -8,10 +8,19 @@ main {
   flex-grow: 1
 }
 
-header {
-  height: 8vh;
-}
 
 footer {
   height: 5vh;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
 }
