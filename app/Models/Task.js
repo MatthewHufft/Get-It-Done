@@ -31,9 +31,15 @@ export default class Task {
 
   get ListItemsTemplate() {
     let template = ''
-    this.listItems.forEach(item => { template += `
+    this.listItems.forEach(item => { 
+      let checkbox = generateId()
+      template += `
       <li class="list-group-item d-flex justify-content-between darker-bg no-select"> 
-        ${item} 
+        <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="${checkbox}">
+        <label class="custom-control-label" for="${checkbox}"></label>
+        </div>
+      ${item} 
         <span> <i class="fa fa-times-circle-o" aria-hidden="true" onclick="app.taskController.removeItem('${this.id}', '${item}')" role="button"></i> </span>
       </li> 
       `});
