@@ -13,12 +13,12 @@ export default class Task {
     return `
     <div class="col mb-3 mx-1">
       <div class="card" style="width: 20rem;">
-      <h5 class="card-header text-light d-flex justify-content-between ${this.colorCode}">${this.title}
+      <h4 class="card-header text-light text-shadow d-flex justify-content-between ${this.colorCode}">${this.title}
       <i class="fa fa-times-circle-o" aria-hidden="true" onclick="app.taskController.removeTask('${this.id}')" role="button"></i>
-      </h5>
+      </h4>
         
         <form onsubmit="app.taskController.createItem('${this.id}')">
-          <input type="text" class="form-control" placeholder="Add list item + Enter" name="listItemInput" >
+          <input type="text" class="form-control" placeholder="Add list item + Enter" name="listItemInput" required >
         </form>
         <ul class="list-group">
           ${this.ListItemsTemplate}

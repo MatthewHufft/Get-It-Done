@@ -29,8 +29,13 @@ export default class TaskController {
   }
 
   removeTask(id) {
-    TaskService.removeTask(id);
-    _drawTasks();
+    let confirm = window.confirm('Are you sure you want to delete this task?')
+    if(confirm) {
+      TaskService.removeTask(id);
+      _drawTasks();
+    } else {
+      return;
+    }
   }
 
   createItem(id){

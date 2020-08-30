@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="/Get-It-Done/assets/custom-theme.css">
     <link rel="stylesheet" href="assets/style.css" />
-    <title>TaskMaster</title>
+    <title>Listify</title>
   </head>
 
   <body>
     <header class="container-fluid bg-info">
       <div class="row">
-        <div class="col-4 mt-2">
+        <div class="col-12 col-md-4 order-2 order-md-1 mt-2">
           
           <form onsubmit="app.taskController.createTask(event)">
             <div class="form-row">
-              <div class="col">
+              <div class="col-12 col-md-4 ">
                 <input type="text" class="form-control" placeholder="Title of Task" name="titleOfTask" required>
               </div>
-              <div class="col">
+              <div class="col-12 col-md-4">
                 <select class="custom-select" id="inlineFormCustomSelectPref" name="colorCode">
                   <option value="bg-primary" selected>Select color</option>
                   <option value="bg-danger">Red</option>
@@ -30,19 +30,19 @@
                   <option value="bg-secondary text-dark">Grey</option>
                 </select>
               </div>
-              <div class="col">
+              <div class="col-12 col-md-4">
                 <button class="btn btn-primary" type="submit">Create Task</button>
               </div>
             </div>
           </form>
           
         </div>
-        <div class="col-4 text-center text-light">
-          <h1 class="text-shadow">Listify</h1>
+        <div class="col-md-4 text-center text-light order-1 order-md-2">
+          <h1 class="blue-shadow">Listify</h1>
         </div>
       </div>
     </header>
-    <main class="container-fluid bg-gradient-dark">
+    <main class="container-fluid main-bg">
       <div class="row mt-4 d-flex justify-content-between" id="taskSection">
         
         <!-- <div class="card" style="width: 18rem;">
