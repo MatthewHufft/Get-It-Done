@@ -29,7 +29,22 @@ export default class TaskController {
   }
 
   removeTask(id) {
-    let confirm = window.confirm('Are you sure you want to delete this task?')
+    let confirm = swal({
+  title: "Are you sure?",
+  text: "You will not be able to recover this task!",
+  icon: "warning",
+  buttons: true,
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    swal("Poof! Your task has been deleted!", {
+      icon: "success",
+    });
+  } else {
+    swal("Your task is safe!");
+  }
+});
     if(confirm) {
       TaskService.removeTask(id);
       _drawTasks();
